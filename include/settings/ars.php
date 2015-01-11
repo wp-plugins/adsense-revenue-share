@@ -62,6 +62,13 @@ return array(
                     '970x90' => 'Large leaderboard (970 x 90)',
                 )
             ),
+            array(
+                'id' => 'styles',
+                'title' => 'Additional styles',
+                'desc' => 'Additional styles applied to AdSense block',
+                'type' => 'textarea',
+                'std' => 'text-align:center;'
+            ),
         )
     )
 );

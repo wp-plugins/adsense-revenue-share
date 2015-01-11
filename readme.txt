@@ -3,8 +3,8 @@ Contributors: garretua
 Donate link: http://cozywp.com/adsense-revenue-share/#donate
 Tags: adsense, ads, advertising, plugin
 Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 1.0
+Tested up to: 4.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,7 @@ This plugin allows to share your AdSense revenue with blog post author. After fi
 * Customizable revenue percentage for authors
 * Customizable banner size (only horizontal banners)
 * Customizable banner position, top or bottom of content
+* Advertisement widget
 * Publisher ID validation. Admin advertisement is shown if author sets incorrect Publisher ID
 
 Official page: [http://cozywp.com/adsense-revenue-share/](http://cozywp.com/adsense-revenue-share/)
@@ -47,6 +48,10 @@ Official page: [http://cozywp.com/adsense-revenue-share/](http://cozywp.com/adse
 
 
 == Changelog ==
+
+= 1.1 =
+* AdSense Rev Share widget
+* Additional styles can be applied to AdSense block
 
 = 1.0 =
 * First release version

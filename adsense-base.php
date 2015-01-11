@@ -5,7 +5,7 @@
  * Author: Alex Mukho
  * Description: This plugin allows you to share your AdSense revenue with blog post author. You can customize revenue percent for author, banners size and position.
  * Author URI: http://cozywp.com/
- * Version: 1.0
+ * Version: 1.1
  * Text Domain: adsense
  * License: GPL2
  */
@@ -18,6 +18,7 @@ define('ARS_FOLDER', basename(ARS_PATH));
 define('ARS_URL', plugins_url() . '/' . ARS_FOLDER);
 define('ARS_URL_INCLUDES', ARS_URL . '/include');
 
+require_once(ARS_PATH . '/adsense-widget.php');
 
 class ARS_Plugin_Base
 {
@@ -47,7 +48,6 @@ class ARS_Plugin_Base
         add_filter('plugin_action_links_' . plugin_basename(__FILE__), array($this, 'ars_add_settings_link'));
 
         require_once(ARS_PATH_INCLUDES . '/wp-settings-framework.php');
-
         $this->settings = new WordPressSettingsFramework(ARS_PATH_INCLUDES . '/settings/ars.php');
     }
 
@@ -56,6 +56,9 @@ class ARS_Plugin_Base
      */
     public function adsense_display($content)
     {
+        if (!is_single())
+            return $content;
+
         $options = get_option('ars_settings');
 
         if (!$options)
@@ -81,7 +84,7 @@ class ARS_Plugin_Base
         list($width, $height) = explode('x', $options['ars_general_size']);
 
         $ad_code = '
-            <div style="text-align:center;" class="adsense-banner">
+            <div style="' . $options['ars_general_styles'] . '" class="adsense-banner">
                 <script type="text/javascript"><!--
                 google_ad_client = "ca-' . $display_pub . '";
                 google_ad_width = ' . $width . ';
